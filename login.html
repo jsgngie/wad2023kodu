@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cool website</title>
     <link rel="stylesheet" type="text/css" href="css\login.css">
+    <script src="js\login.js"></script>
 </head>
 <body>
     <header>
@@ -12,13 +13,13 @@
             <div class="back" onclick="window.location.href='index.html'">
                 Back
             </div>
+            <div class="title">
+                Let's PostIt
+            </div>
             <img src="img\d01fc02d91b442b9506900f879d4eeec.png" class="profPicImg"></img>
         </div>
     </header>
     <div id="loginBox">
-        <p class="welcomeText">
-            Welcome to PostIt
-        </p>
         <p class="loginInstructions">
             Create an account
             <br>
@@ -26,12 +27,13 @@
             <br>
             Please log in
         </p>
+        <p id="errorMessage">fill both fields!</p>
         <form id="loginFields">
-            <input type="text" id="loginName" name="loginName">
+            <input type="text" id="loginName" name="loginName" placeholder="Username">
             <br>
-            <input type="password" id="loginPassword" name="loginPassword">
+            <input type="password" id="loginPassword" name="loginPassword" placeholder="Password">
             <br>
-            <input type="submit" value="Submit" id="submit">
+            <input type="submit" value="Submit" id="submit" onclick=areFieldsEmpty()>
         </form>
         <p id="forgetPassword">
             Forget password

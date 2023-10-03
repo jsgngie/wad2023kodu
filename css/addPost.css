@@ -1,5 +1,10 @@
+@font-face {
+    font-family: "customFont";
+    src: url(Jost-Regular.woff);
+}
 body {
-    background-color: rgb(44, 74, 90);
+    background-image: url("blur.jpg");
+    background-size:cover;
 }
 
 #headerBox {
@@ -11,16 +16,27 @@ body {
     border-radius: 25px;
     align-items: center;
     flex-direction: row;
+    border-style:groove;
+    border-color: white;
+    justify-content: space-between;
+}
+
+.title {
+    font-family: "customFont";
+    font-size:75px;
+    padding-right: 50px;
+    color:black;
 }
 
 .back {
     padding: 20px;
     font-size: 40px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "customFont";
     background-color: whitesmoke;
-    margin-left: 10px;
     border-radius: 25px;
     cursor:pointer;
+    border-style:groove;
+    border-color: white;
 }
 
 .back:hover {
@@ -29,10 +45,8 @@ body {
 
 .profPicImg {
     height: 75px;
-    margin-left:auto;
-    margin-right:10px;
     border-radius: 25px;
-    border-style:outset;
-    border-width: 5px;
-    border-color:whitesmoke;
+    border-style:groove;
+    border-color: white;
+    
 }
