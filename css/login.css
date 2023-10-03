@@ -1,0 +1,102 @@
+body {
+    background-color: rgb(44, 74, 90);
+}
+
+#headerBox {
+    display:flex;
+    background-color: gainsboro;
+    height: 100px;
+    width: device-width;
+    padding: 10px;
+    border-radius: 25px;
+    align-items: center;
+    flex-direction: row;
+}
+
+.back {
+    padding: 20px;
+    font-size: 40px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: whitesmoke;
+    margin-left: 10px;
+    border-radius: 25px;
+    cursor:pointer;
+}
+
+.back:hover {
+    opacity: 75%;
+}
+
+.profPicImg {
+    height: 75px;
+    margin-left:auto;
+    margin-right:10px;
+    border-radius: 25px;
+    border-style:outset;
+    border-width: 5px;
+    border-color:whitesmoke;
+}
+
+#loginBox {
+    margin:auto;
+    display:flex;
+    height: 500px;
+    width: fit-content;
+    padding-left: 25px;
+    padding-right:25px;
+    margin-top: 50px;
+    border-radius:25px;
+    background-color: gainsboro;
+    flex-direction: column;
+    align-items: center;
+}
+
+.welcomeText {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+    font-size: 40px;
+    text-align: center;
+}
+
+.loginInstructions {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align:justify;
+    text-justify: center;
+    font-size: 25px;
+}
+
+#loginFields {
+    padding: 10px;
+}
+
+#loginName {
+    height: 25px;
+    margin-bottom:10px;
+}
+#loginPassword {
+    height: 25px;
+    margin-bottom:10px;
+}
+
+#submit {
+    background-color:rgb(74, 132, 171);
+    border-radius: 5px;
+    border-style:none;
+    width: 100%;
+    height:25px;
+    font-size: 15px;
+    font-weight: bold;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    cursor:pointer;
+}
+
+#submit:hover {
+    opacity: 75%;
+}
+
+#forgetPassword {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(98, 151, 231);
+    font-weight: bold;
+    font-size: 25px;
+}
