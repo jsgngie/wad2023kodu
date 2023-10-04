@@ -6,6 +6,12 @@ body {
     background-image: url("blur.jpg");
 }
 
+@media screen and (max-width: 500px) {
+    .title {
+      display: none;
+    }
+  }
+
 #headerBox {
     display:flex;
     background-color: gainsboro;
@@ -22,8 +28,9 @@ body {
 
 .title {
     font-family: "customFont";
-    font-size:75px;
-    padding-right: 50px;
+    font-size:6vw;
+    padding-left: 25px;
+    padding-right:50px;
     color:black;
 }
 
