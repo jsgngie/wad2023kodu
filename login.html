@@ -27,17 +27,17 @@
             <br>
             Please log in
         </p>
-        <p id="errorMessage">fill both fields!</p>
         <form id="loginFields">
             <input type="text" id="loginName" name="loginName" placeholder="Username">
             <br>
             <input type="password" id="loginPassword" name="loginPassword" placeholder="Password">
             <br>
-            <input type="submit" value="Submit" id="submit" onclick=areFieldsEmpty()>
+            <input type="submit" value="Submit" id="submit" disabled>
         </form>
-        <p id="forgetPassword">
+        <p id="forgetPassword" onclick=rememberIt()>
             Forget password
         </p>
+        <p id="toolTip">Try to remember it! :]</p>
     </div>
 </body>
 </html>

@@ -4,7 +4,6 @@
 }
 body {
     background-image: url("blur.jpg");
-    background-size:cover;
 }
 
 #headerBox {
@@ -39,6 +38,22 @@ body {
 }
 
 .logIn:hover {
+    opacity: 75%;
+}
+
+.addPost {
+    padding: 20px;
+    font-size: 40px;
+    font-family: "customFont";
+    background-color: whitesmoke;
+    border-radius: 25px;
+    cursor:pointer;
+    border-style:groove;
+    border-color: white;
+    margin-left: 10px;
+}
+
+.addPost:hover {
     opacity: 75%;
 }
 
