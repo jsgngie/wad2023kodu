@@ -12,6 +12,11 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         }
       });
+
+      document.getElementById("loginFields").onsubmit = function () {
+        window.location.href = "index.html";
+        return false;
+    };
 })
 
 function rememberIt() {

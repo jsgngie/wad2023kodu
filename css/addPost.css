@@ -27,6 +27,7 @@ body {
     color:black;
 }
 
+
 .back {
     padding: 20px;
     font-size: 40px;
@@ -39,7 +40,8 @@ body {
 }
 
 .back:hover {
-    opacity: 75%;
+    background: #6dc7db;
+    transition: background 0.5s ease-in-out;
 }
 
 .profPicImg {
@@ -48,4 +50,80 @@ body {
     border-style:groove;
     border-color: white;
     
+}
+
+#addPostBox {
+    margin:auto;
+    display:flex;
+    height: 260px;
+    width: fit-content;
+    padding-left: 25px;
+    padding-right:25px;
+    margin-top: 25px;
+    border-radius:25px;
+    background-color: gainsboro;
+    flex-direction: column;
+    border-style:groove;
+    border-color: white;
+    align-items: center;
+}
+
+#postBody {
+    word-wrap: break-word;
+    word-break: break-all;
+    margin-top:20px;
+    height:100px;
+    width:inherit;
+    border-radius:10px;
+    text-align:start;
+    resize:none;
+
+}
+
+#picUpload {
+    display:none;
+}
+
+#picUploadLabel {
+    background-color:rgb(69, 139, 189);
+    width: 100%;
+    height:25px;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: "customFont";
+    color: white;
+    border-radius: 25px;
+    padding:10px;
+    margin-left:15px;
+    border-style:groove;
+    border-color:white;
+    cursor:pointer;
+}
+
+#picUploadLabel:hover {
+    opacity:75%;
+}
+
+#submit {
+    display:none;
+}
+
+#submitLabel {
+    background-color:rgb(69, 139, 189);
+    width: 100%;
+    height:25px;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: "customFont";
+    color: white;
+    border-radius: 25px;
+    padding:7px;
+    margin-left:35px;
+    border-style:groove;
+    border-color:white;
+    cursor:pointer;
+}
+
+#submitLabel:hover {
+    opacity:75%;
 }

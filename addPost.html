@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cool website</title>
     <link rel="stylesheet" type="text/css" href="css\addPost.css">
+    <script src="js\addPost.js"></script>
 </head>
 <body>
     <header>
@@ -13,6 +14,18 @@
                 Back
             </div>
             <img src="img\d01fc02d91b442b9506900f879d4eeec.png" class="profPicImg"></img>
+        </div>
+        <div id="addPostBox">
+            <form id="addPostForm">
+                <textarea id="postBody" placeholder="Post body"></textarea>
+                <br>
+                <br>
+                <label for="picUpload" id="picUploadLabel">Choose a picture</label>
+                <input type="file" id="picUpload" name="picUpload" accept=".jpg, .jpeg, .png">
+                <br><br><br>
+                <label for="submit" id="submitLabel">Create post</label>
+                <input type="submit" value="" id="submit">
+            </form>
         </div>
     </header>
 </body>

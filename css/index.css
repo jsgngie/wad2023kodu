@@ -17,16 +17,10 @@ body {
     flex-direction: row;
     border-style:groove;
     border-color: white;
+    justify-content:flex-start;
 }
 
-.title {
-    font-family: "customFont";
-    font-size:75px;
-    padding-right: 50px;
-    color:black;
-}
-
-.logIn {
+.home {
     padding: 20px;
     font-size: 40px;
     font-family: "customFont";
@@ -37,8 +31,9 @@ body {
     border-color: white;
 }
 
-.logIn:hover {
-    opacity: 75%;
+.home:hover {
+    background: #6dc7db;
+    transition: background 0.5s ease-in-out;
 }
 
 .addPost {
@@ -50,11 +45,13 @@ body {
     cursor:pointer;
     border-style:groove;
     border-color: white;
-    margin-left: 10px;
+    white-space: nowrap;
+    margin-left:10px;
 }
 
 .addPost:hover {
-    opacity: 75%;
+    background: #6dc7db;
+    transition: background 0.5s ease-in-out;
 }
 
 .profPicImg {
@@ -63,4 +60,47 @@ body {
     border-style:groove;
     border-color: white;
     margin-left: auto;
+}
+
+.addIcon {
+    height:110px;
+    width:110px;
+    cursor:pointer;
+    display:none;
+    margin-left:auto;
+}
+
+.homeIcon {
+    height:100px;
+    width:100px;
+    cursor:pointer;
+    display:none;
+}
+
+@media screen and (max-width: 500px) {
+    .profPicImg {
+      display: none;
+    }
+    
+    .addPost {
+        margin-left:auto;
+    }
+}
+
+@media screen and (max-width: 390px) {
+    .home {
+        display:none;
+    }
+    
+    .addPost {
+        display:none;
+    }
+
+    .homeIcon {
+        display:inherit;
+    }
+
+    .addIcon {
+        display:inherit;
+    }
 }
