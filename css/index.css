@@ -20,6 +20,22 @@ body {
     justify-content:flex-start;
 }
 
+#footerBox {
+    display:flex;
+    bottom:0;
+    background-color: gainsboro;
+    height: 100px;
+    margin-top:50px;
+    width: device-width;
+    padding: 10px;
+    border-radius: 25px;
+    align-items: center;
+    flex-direction: row;
+    border-style:groove;
+    border-color: white;
+    justify-content:flex-start;
+}
+
 .home {
     padding: 20px;
     font-size: 40px;
