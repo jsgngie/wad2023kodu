@@ -85,6 +85,10 @@ body {
     .addPost {
         margin-left:auto;
     }
+
+    #firstPostImg {
+        width:80vw;
+    }
 }
 
 @media screen and (max-width: 390px) {
@@ -103,4 +107,71 @@ body {
     .addIcon {
         display:inherit;
     }
+}
+
+.posts {
+    margin:auto;
+    display:flex;
+    height: fit-content;
+    width: device-width;
+    max-width:300px;
+    padding-left: 25px;
+    padding-right:25px;
+    margin-top: 25px;
+    border-radius:25px;
+    background-color: gainsboro;
+    flex-direction: column;
+    align-items: center;
+    border-style:groove;
+    border-color: white;
+}
+
+.posts img {
+    max-width: 300px;
+    max-height:300px;
+    margin-top:5px;
+    margin-bottom: 5px;
+}
+
+#firstPostImg {
+    border-radius:25px;
+    border-style:groove;
+    border-color: white;
+}
+
+.postHeader {
+    margin-top:10px;
+    display:flex;
+    justify-content: space-between;
+}
+
+.postProfileImg {
+    height:50px;
+    width:50px;
+    border-radius:10px;
+    border-style:groove;
+    border-color: white;
+}
+
+#postDate {
+    margin-left:auto;
+    font-family: "customFont";
+}
+
+#postText {
+    font-family: "customFont";
+    margin-bottom:5px;
+}
+
+#likeButton {
+    width:50px;
+    border-radius:50px;
+    border-style:groove;
+    border-color: white;
+    cursor:pointer;
+}
+
+#likeButton:hover {
+    opacity:80%;
+    transition: opacity 0.25s ease-in-out;
 }
