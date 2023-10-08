@@ -1,0 +1,68 @@
+{
+    "posts": [
+        {
+            "author": "Samuel",
+            "profilePicName": "img/user.png",
+            "text": "Hey, It's me",
+            "picName": null,
+            "date": "29. Sept 2023"
+        },
+
+        {
+            "author": "José",
+            "profilePicName": "img/dog.png",
+            "text": "Check out my dog!",
+            "picName": "img/dog.png",
+            "date": "26. Sept 2023"
+        },
+
+        {
+            "author": "Samantha",
+            "profilePicName": "img/math.png",
+            "text": "Can somebody help me with math problem?",
+            "picName": "img/math.png",
+            "date": "13. Sept 2023"
+        },
+
+        {
+            "author": "Riley",
+            "profilePicName": "img/user2.png",
+            "text": "Hello, my name is Riley",
+            "picName": null,
+            "date": "12. Sept 2023"
+        },
+
+        {
+            "author": "Hanna",
+            "profilePicName": "img/user2.png",
+            "text": "Hi, my name is Hanna",
+            "picName": "img/user2.png",
+            "date": "10. Sept 2023"
+        },
+
+        {
+            "author": "Samuel",
+            "profilePicName": "img/user.png",
+            "text": "Sup",
+            "picName": "img/user.png",
+            "date": "8. Sept 2023"
+        },
+
+        {
+            "author": "Bob",
+            "profilePicName": "img/user.png",
+            "text": "Hello, I am Bob",
+            "picName": "img/user.png",
+            "date": "7. Sept 2023"
+        },
+
+        {
+            "author": "Lisa",
+            "profilePicName": "img/user.png",
+            "text": "Hello",
+            "picName": null,
+            "date": "4. Sept 2023"
+        },
+
+    ]
+}
