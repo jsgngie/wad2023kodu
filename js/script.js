@@ -1,5 +1,22 @@
+//Dropdown logic
+const profPic = document.getElementById("dropDownBtn")
+const dropdown = document.getElementById("profDropDown")
+// hetkel ei tea miks ta esimesel clickil popib ja teistel
+// transitionit teeb aga ma täna ei jõua enam tegeleda.
 
-// fetch('https://api.npoint.io/21b1db5b0e48a83466da')
+profPic.addEventListener("click", () => {
+    var computed = getComputedStyle(dropdown)
+    if (computed.visibility == "visible") {
+        dropdown.style.visibility = "hidden"
+        dropdown.style.transform = "scaleY(0)"
+    } else {
+        dropdown.style.transform = "scaleY(1)"
+        dropdown.style.visibility = "visible"
+    }
+})
+
+/**
+fetch('https://api.npoint.io/21b1db5b0e48a83466da')
 fetch('things.json') // NB! things.json needs to be on a local server for this to work
     .then((response) => response.json())
     .then(json => {
@@ -50,23 +67,5 @@ fetch('things.json') // NB! things.json needs to be on a local server for this t
         }
 
         posts.innerHTML = out;
-})
-
-// for some reason the HTML files do not call the function
-// they don't give an error message either
-function userInfo() { 
-    document.getElementById("myDropdown").classList.toggle("show");
-}
-
-window.onclick = function(event) {
-    if (event.target.matches('.dropimg')) {
-        var dropdowns = document.getElementsByClassName("user-info");
-        var i;
-        for (i = 0; i < dropdowns.length; i++) {
-            var openDropdown = dropdowns[i];
-            if (openDropdown.classList.contains('show')) {
-                openDropdown.classList.remove('show');
-            }
-        }
-    }
-}  
+}) 
+*/
