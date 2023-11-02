@@ -2,6 +2,7 @@
 // kontrolliks kas on img 
 // jne 
 
+/*
 // creating new posts.
 const posts = document.getElementById('postsBox')
 //new post
@@ -44,6 +45,7 @@ newPost.append(postBodyImg)
 newPost.append(postFooter)
 
 posts.append(newPost)
+*/
 
 //Dropdown logic
 const profPic = document.getElementById("dropDownBtn")
@@ -65,6 +67,39 @@ profPic.addEventListener("click", () => {
         dropdownText.style.transform = "scale(1)"
     }
 })
+
+
+
+fetch('https://api.npoint.io/21b1db5b0e48a83466da') 
+  .then((response) => response.json())
+  .then((data) => {
+    const posts = data.posts; // Array of post objects
+
+    // Loop through the post objects and create HTML elements for each post
+    for (const post of posts) {
+      //(code to create post elements)
+      const postElement = document.createElement('div');
+      postElement.className = 'post';
+
+      // Create HTML structure for the post content
+      postElement.innerHTML = `
+        <img src="${post.profilePicName}" class="postProfileImg">
+        <p id="postDate">${post.date}</p>
+        <img src="${post.picName}" id="firstPostImg">
+        <div class="postFooter">
+            <p id="postText">${post.text}</p>
+            <img id="likeButton" src="img/heart.png">
+        </div>
+  `;
+
+    // Append the post to the #postsBox element
+    postsBox.appendChild(postElement);;
+    }
+  })
+  .catch((error) => console.error('Error fetching data:', error));
+
+
+
 
 /**
 fetch('https://api.npoint.io/21b1db5b0e48a83466da')
