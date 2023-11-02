@@ -23,7 +23,6 @@ body {
 
 #footerBox {
     display:flex;
-    bottom:0;
     background-color: gainsboro;
     height: 100px;
     margin-top:50px;
@@ -35,6 +34,8 @@ body {
     border-style:groove;
     border-color: white;
     justify-content:center;
+    position:inherit;
+    bottom:10px;
 }
 
 #footerBox p {
@@ -89,22 +90,25 @@ body {
 }
 
 #profDropDown {
-    display:flex;
-    align-items: center;
-    flex-direction: column;
     position:absolute;
     border-radius: 0px 0px 25px 25px;
     border-style:groove;
     border-color: white;
-    background-image: url("../img/funk.jpg");
+    background-color:gainsboro;
     padding: 20px;
     right: 8px;
     margin-top:20px;
     font-family: 'customFont';
-    color:white;
-    transition: all 0.1s;
+    transition: all 0.2s;
     transform-origin:top;
     visibility: hidden;
+}
+
+#dropDownText {
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    transition: all 0.2s;
 }
 
 .profPicImg:hover {
@@ -153,6 +157,10 @@ body {
     
     .addPost {
         margin-left:auto;
+    }
+
+    #profDropDown {
+        display:none;
     }
 }
 
