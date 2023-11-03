@@ -4,7 +4,8 @@
 }
 body {
     background-image: url("blur.jpg");
-    overflow-x:hidden;
+    background-size: cover; /* This will stretch the image to cover the entire element */
+    background-repeat: no-repeat;
 }
 
 #headerBox {
@@ -137,8 +138,6 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;  
-    /* width: 40%;
-    height: 50%; */
     border-radius: 25px;
     width: 40%;
     height: 350px;
@@ -210,10 +209,6 @@ body {
     max-height:250px;
     margin-top:5px;
     margin-bottom: 5px;
-    border-radius: 5px;
-    border-width:5px;
-    border-style: groove;
-    border-color:white;
 }
 
 .firstPost {
@@ -231,22 +226,28 @@ body {
 .postProfileImg {
     height:50px;
     width:50px;
-    border-radius:10px;
     border-style:groove;
-    border-color: white;
+    border-color:white;
+    border-spacing:10px;
 }
 
-#postDate {
+.firstPostImg {
+    border-radius: 5px;
+    border-style:groove;
+    border-color:white;
+    border-spacing:10px;
+}
+.postDate {
     margin-left:auto;
     font-family: "customFont";
 }
 
-#postText {
+.postText {
     font-family: "customFont";
     margin-bottom:5px;
 }
 
-#likeButton {
+.likeButton {
     width:50px;
     border-radius:50px;
     border-style:groove;
@@ -254,7 +255,7 @@ body {
     cursor:pointer;
 }
 
-#likeButton:hover {
+.likeButton:hover {
     opacity:80%;
     transition: opacity 0.25s ease-in-out;
 }

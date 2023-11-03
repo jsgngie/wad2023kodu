@@ -1,52 +1,3 @@
-//see kõik on vaja loopi panna et ta teeks kõik elemendid,
-// kontrolliks kas on img 
-// jne 
-
-/*
-// creating new posts.
-const posts = document.getElementById('postsBox')
-//new post
-const newPost = document.createElement('div')
-newPost.className = 'firstPost'
-//post header
-const postHeader = document.createElement('div')
-postHeader.className = 'postHeader'
-//header image
-const postImg = document.createElement('img')
-postImg.className = 'postProfileImg'
-postImg.src = 'img\\d01fc02d91b442b9506900f879d4eeec.png'
-//header date
-const postDate = document.createElement('p')
-const dateNode = document.createTextNode("Sept 8, 2023")
-postDate.append(dateNode)
-postDate.id = 'postDate'
-//post body
-const postBodyImg = document.createElement('img')
-postBodyImg.id = 'firstPostImg'
-postBodyImg.src = 'img\\banaan.jpg'
-//post footer
-const postFooter = document.createElement('div')
-postFooter.className = 'postFooter'
-const postText = document.createElement('p')
-postText.id = 'postText'
-const pTextNode = document.createTextNode('This is what a banana looks like')
-postText.append(pTextNode)
-const likeButton = document.createElement('img')
-likeButton.id = 'likeButton'
-likeButton.src = 'img\\heart.png'
-
-postFooter.append(postText)
-postFooter.append(likeButton)
-//append all elements
-postHeader.append(postImg)
-postHeader.append(postDate)
-newPost.append(postHeader)
-newPost.append(postBodyImg)
-newPost.append(postFooter)
-
-posts.append(newPost)
-*/
-
 //Dropdown logic
 const profPic = document.getElementById("dropDownBtn")
 const dropdown = document.getElementById("profDropDown")
@@ -68,9 +19,58 @@ profPic.addEventListener("click", () => {
     }
 })
 
+const postsBox = document.getElementById("postsBox");
+//creating posts from local server.
 
+//json validation https://jsonlint.com/
 
-fetch('https://api.npoint.io/21b1db5b0e48a83466da') 
+fetch('./js/things.json') 
+  .then((response) => response.json())
+  .then((data) => {
+    const posts = data.posts;
+    // Loop through the post objects and create HTML elements for each post
+    for (const post of posts) {
+        console.log(post)
+        const postElement = document.createElement('div')
+        //check if the post has a picture defined.
+
+        if (post.picName == null) {
+            //if there is no picture
+            postElement.className = 'secondPost'
+            postElement.innerHTML = `
+            <div class="postHeader">
+                <img src=${post.profilePicName} class="postProfileImg"></img>
+                <p class="postDate">${post.date}</p>
+            </div>
+            <div class="postFooter">
+                <p class="postText">${post.text}</p>
+                <img src="assets\\images\\heart.png" class="likeButton"></img>
+            </div>`;
+        } else {
+            //if there is a picture
+            postElement.className = 'firstPost'
+            postElement.innerHTML = `
+            <div class="postHeader">
+                <img src=${post.profilePicName} class="postProfileImg"></img>
+                <p class="postDate">${post.date}</p>
+            </div>
+            <img src=${post.picName} class="firstPostImg"></img>
+            <div class="postFooter">
+                <p class="postText">${post.text}</p>
+                <img src="assets\\images\\heart.png" class="likeButton"></img>
+            </div>`;
+        }
+        //append the post to the posts element of html
+        postsBox.appendChild(postElement)
+    } 
+
+  })
+  .catch((error) => console.error('Error fetching data:', error));
+
+// https://www.npoint.io/docs/3d7a1e51fc83d0dc414a
+//fetching from endpoint
+/**
+fetch('https://api.npoint.io/3d7a1e51fc83d0dc414a') 
   .then((response) => response.json())
   .then((data) => {
     const posts = data.posts; // Array of post objects
@@ -79,81 +79,38 @@ fetch('https://api.npoint.io/21b1db5b0e48a83466da')
     for (const post of posts) {
       //(code to create post elements)
       const postElement = document.createElement('div');
-      postElement.className = 'post';
 
-      // Create HTML structure for the post content
-      postElement.innerHTML = `
-        <img src="${post.profilePicName}" class="postProfileImg">
-        <p id="postDate">${post.date}</p>
-        <img src="${post.picName}" id="firstPostImg">
-        <div class="postFooter">
-            <p id="postText">${post.text}</p>
-            <img id="likeButton" src="img/heart.png">
+      //check if post has photo
+      if (post.picName == null) {
+        //if has no photo
+        postElement.className = 'secondPost'
+        postElement.innerHTML = `
+        <div class="postHeader">
+            <img src=${post.profilePicName} class="postProfileImg"></img>
+            <p class="postDate">${post.date}</p>
         </div>
-  `;
+        <div class="postFooter">
+            <p class="postText">${post.text}</p>
+            <img src="assets\\images\\heart.png" class="likeButton"></img>
+        </div>`;
+      } else {
+        //if it has a photo
+        postElement.className = 'firstPost'
+        postElement.innerHTML = `
+        <div class="postHeader">
+            <img src=${post.profilePicName} class="postProfileImg"></img>
+            <p class="postDate">${post.date}</p>
+        </div>
+        <img src=${post.picName} class="firstPostImg"></img>
+        <div class="postFooter">
+            <p class="postText">${post.text}</p>
+            <img src="assets\\images\\heart.png" class="likeButton"></img>
+        </div>`;
+      }
 
     // Append the post to the #postsBox element
-    postsBox.appendChild(postElement);;
+    postsBox.appendChild(postElement);
     }
   })
   .catch((error) => console.error('Error fetching data:', error));
-
-
-
-
-/**
-fetch('https://api.npoint.io/21b1db5b0e48a83466da')
-fetch('things.json') // NB! things.json needs to be on a local server for this to work
-    .then((response) => response.json())
-    .then(json => {
-
-        let posts = document.querySelector('#posts');
-        let out = '';
-
-        for (let post of json.posts) {
-
-            if (post.picName != null) {
-                out += `
-                    <br>
-                    <br>
-                
-                    <div class="post">
-                        <small>` + post.author + `</small>
-                        <br>
-                        <br>
-                        <img src="` + post.profilePicName + `" width="40" height="40" alt="user">
-                        <br>
-                        <br>
-                        <p>` + post.text + `</p>
-                        <img src="` + post.picName + `">
-                        <br>
-                        <br>
-                        <small>` + post.date + `</small>
-                    </div>
-                `;
-            } else {
-                out += `
-                    <br>
-                    <br>
-                
-                    <div class="post">
-                        <small>` + post.author + `</small>
-                        <br>
-                        <br>
-                        <img src="` + post.profilePicName + `" width="40" height="40" alt="user">
-                        <br>
-                        <br>
-                        <p>` + post.text + `</p>
-                        <br>
-                        <small>` + post.date + `</small>
-                    </div>
-                `;
-            }
-
-        }
-
-        posts.innerHTML = out;
-}) 
- */
-
-
+*/
