@@ -2,8 +2,6 @@
 const profPic = document.getElementById("dropDownBtn")
 const dropdown = document.getElementById("profDropDown")
 const dropdownText = document.getElementById("dropDownText")
-// hetkel ei tea miks ta esimesel clickil popib ja teistel
-// transitionit teeb aga ma täna ei jõua enam tegeleda.
 
 profPic.addEventListener("click", () => {
     var computed = getComputedStyle(dropdown)
@@ -40,6 +38,7 @@ fetch('./js/things.json')
             postElement.innerHTML = `
             <div class="postHeader">
                 <img src=${post.profilePicName} class="postProfileImg"></img>
+                <p class="poster">${post.author}</p>
                 <p class="postDate">${post.date}</p>
             </div>
             <div class="postFooter">
@@ -52,6 +51,7 @@ fetch('./js/things.json')
             postElement.innerHTML = `
             <div class="postHeader">
                 <img src=${post.profilePicName} class="postProfileImg"></img>
+                <p class="poster">${post.author}</p>
                 <p class="postDate">${post.date}</p>
             </div>
             <img src=${post.picName} class="firstPostImg"></img>
@@ -87,6 +87,7 @@ fetch('https://api.npoint.io/3d7a1e51fc83d0dc414a')
         postElement.innerHTML = `
         <div class="postHeader">
             <img src=${post.profilePicName} class="postProfileImg"></img>
+            <p class="poster">${post.author}</p>
             <p class="postDate">${post.date}</p>
         </div>
         <div class="postFooter">
@@ -99,6 +100,7 @@ fetch('https://api.npoint.io/3d7a1e51fc83d0dc414a')
         postElement.innerHTML = `
         <div class="postHeader">
             <img src=${post.profilePicName} class="postProfileImg"></img>
+            <p class="poster">${post.author}</p>
             <p class="postDate">${post.date}</p>
         </div>
         <img src=${post.picName} class="firstPostImg"></img>

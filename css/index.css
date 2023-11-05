@@ -180,6 +180,9 @@ body {
     .addIcon {
         display:inherit;
     }
+    .poster {
+        display:none;
+    }
 }
 
 .posts {
@@ -240,6 +243,12 @@ body {
 .postDate {
     margin-left:auto;
     font-family: "customFont";
+}
+
+.poster {
+    font-family: "customFont";
+    margin-left:auto;
+    margin-right:auto;
 }
 
 .postText {
