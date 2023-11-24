@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cool website</title>
     <link rel="stylesheet" type="text/css" href="css\index.css">
+    <link rel="stylesheet" type="text/css" href="css\stylesheet.css">
 </head>
 <body>
     <header>
@@ -16,7 +17,7 @@
             <div class="addPost" onclick="window.location.href='addPost.html'">
                 Add post
             </div>
-            <div class="addPost" onclick="window.location.href='signup.html'">
+            <div class="addPost" onclick="window.location.href='signUp.html'">
                 Sign Up
             </div>
             <img src="assets\images\7601867.png" class="addIcon" onclick="window.location.href='addPost.html'"></img>
@@ -33,6 +34,19 @@
         </div>
     </header>
     
+    <div class="center general-background">
+        <form class="center signup_form">
+            <div class="form_div">
+                <label class="signup_form_label" for="email">E-mail</label>
+                <input id="email" type="email" />   
+            </div>
+            <div class="form_div">
+                <label class="signup_form_label" for="password">Password</label>
+                <input id="password" type="password" />
+            </div>
+            <input type="submit" value="Signup">
+        </form>
+    </div>
     
 
     <footer>
