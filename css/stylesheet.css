@@ -19,8 +19,12 @@
     justify-content: flex-start;
 }
 
+.height-200 {
+    height: 200px;
+}
+
 .signup_form {
-    width: 250px;
+    width: 300px;
 }
 
 .signup_form_label {
@@ -36,4 +40,9 @@
 
 form input {
     display: inline-block;
+}
+
+input[type="email"], input[type="password"], input[type="submit"]{
+    padding: 10px;
+    border-radius: 20px;
 }

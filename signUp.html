@@ -34,19 +34,22 @@
         </div>
     </header>
     
-    <div class="center general-background">
-        <form class="center signup_form">
+    <div class="center general-background height-200">
+        <form id="signupForm" class="center signup_form">
             <div class="form_div">
                 <label class="signup_form_label" for="email">E-mail</label>
                 <input id="email" type="email" />   
             </div>
             <div class="form_div">
                 <label class="signup_form_label" for="password">Password</label>
-                <input id="password" type="password" />
+                <input id="password" type="password"
+       title="Must meet the requirements" required>
             </div>
             <input type="submit" value="Signup">
         </form>
+        <div id="passwordRequirements" style="color: red; display: none;"></div>
     </div>
+    
     
 
     <footer>
@@ -56,6 +59,8 @@
     </footer>
 </body>
 <script type="module" src="./js/script.js"></script>
+
+<script src="js/signup.js"></script>
 </html>
 
 
