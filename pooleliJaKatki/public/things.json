@@ -1,0 +1,83 @@
+{
+    "posts": [
+        {
+            "author": "Samuel",
+            "profilePicName": "assets/images/user.png",
+            "text": "Hey, It's me",
+            "picName": null,
+            "date": "29. Sept 2023"
+        },
+
+        {
+            "author": "José",
+            "profilePicName": "assets/images/dog.png",
+            "text": "Check out my dog!",
+            "picName": "assets/images/dog.png",
+            "date": "26. Sept 2023"
+        },
+
+        {
+            "author": "Samantha",
+            "profilePicName": "assets/images/math.png",
+            "text": "Can somebody help me with math problem?",
+            "picName": "assets/images/math.png",
+            "date": "13. Sept 2023"
+        },
+
+        {
+            "author": "Riley",
+            "profilePicName": "assets/images/user2.png",
+            "text": "Hello, my name is Riley",
+            "picName": null,
+            "date": "12. Sept 2023"
+        },
+
+        {
+            "author": "Hanna",
+            "profilePicName": "assets/images/user2.png",
+            "text": "Hi, my name is Hanna",
+            "picName": "assets/images/user2.png",
+            "date": "10. Sept 2023"
+        },
+
+        {
+            "author": "Samuel",
+            "profilePicName": "assets/images/user.png",
+            "text": "Sup",
+            "picName": "assets/images/user.png",
+            "date": "8. Sept 2023"
+        },
+
+        {
+            "author": "Bob",
+            "profilePicName": "assets/images/user.png",
+            "text": "Hello, I am Bob",
+            "picName": "assets/images/user.png",
+            "date": "7. Sept 2023"
+        },
+
+        {
+            "author": "Lisa",
+            "profilePicName": "assets/images/user.png",
+            "text": "Hello",
+            "picName": null,
+            "date": "4. Sept 2023"
+        },
+
+        {
+            "author": "James",
+            "profilePicName": "assets/images/banaan.jpg",
+            "text": "This is what a banana looks like",
+            "picName": "assets/images/banaan.jpg",
+            "date": "6. Sept 2023"
+        },
+
+        {
+            "author": "Clint",
+            "profilePicName": "assets/images/beans.jpg",
+            "text": "Yum",
+            "picName": "assets/images/beans.jpg",
+            "date": "8. Sept 2023"
+        }
+    ]
+}
