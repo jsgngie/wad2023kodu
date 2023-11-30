@@ -14,7 +14,6 @@ export default {
 <style scoped>
 
 footer {
-  display:flex;
   background-color: gainsboro;
   height: 100px;
   width: device-width;
@@ -24,9 +23,8 @@ footer {
   flex-direction: row;
   border-style:groove;
   border-color: white;
-  justify-content:center;
-  position:inherit;
-  bottom:10px;
+  display: flex;
+  justify-content: center;
 }
 
 </style>

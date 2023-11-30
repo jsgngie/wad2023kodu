@@ -11,12 +11,11 @@ import HeaderComponent from './components/headerComponent.vue';
 import FooterComponent from './components/FooterComponent.vue';
 
 
-
 export default {
   name: 'App',
   components: {
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
   }
 }
 </script>
@@ -29,9 +28,12 @@ export default {
 
 body {
   background-image: url("assets/images/blur.jpg");
-  background-size: auto;
-  background-repeat: repeat;
+  background-size:cover;
   font-family: "customFont";
+}
+
+footer {
+
 }
 </style>
 

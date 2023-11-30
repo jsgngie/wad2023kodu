@@ -39,6 +39,8 @@ header {
   background-color:rgb(203, 199, 199);
   border-radius: 10px;
   border-style: groove;
+  text-decoration: none;
+  color:black;
 }
 
 .buttons:hover {
