@@ -11,7 +11,9 @@
                 <input id="password" type="password"
        title="Must meet the requirements" required>
             </div>
-            <input type="submit" value="Signup">
+            <div class="center-signup">
+              <input type="submit" value="Signup">
+            </div>
         </form>
         <div id="passwordRequirements" style="color: red; display: none;"></div>
       </div>
@@ -31,6 +33,12 @@
     margin: auto;
     width: 300px;
     padding: 10px;
+}
+
+.center-signup {
+  margin: auto;
+  width: 100%;
+  padding: 10px;
 }
 
 .general-background {
@@ -69,6 +77,10 @@ form input {
 input[type="email"], input[type="password"], input[type="submit"]{
     padding: 10px;
     border-radius: 20px;
+    width: 50%;
+}
+input[type="submit"]{
+  width: 100%;
 }
 
 </style>
