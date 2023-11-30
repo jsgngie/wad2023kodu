@@ -1,31 +1,71 @@
 <template>
     <div>
-        <div class="center general-background height-200">
-        <form id="signupForm" class="center">
-            <div class="form_div">
-                <label class="signup_form_label" for="email">E-mail</label>
-                <input id="email" type="email" />   
-            </div>
-            <div class="form_div">
-                <label class="signup_form_label" for="password">Password</label>
-                <input id="password" type="password"
-       title="Must meet the requirements" required>
-            </div>
-            <div class="center-signup">
-              <input type="submit" value="Signup">
-            </div>
-        </form>
-        <div id="passwordRequirements" style="color: red; display: none;"></div>
+        <div class="center general-background">
+          <div style="display: block;">
+            <form id="signupForm" class="center">
+                <div class="form_div">
+                    <label class="signup_form_label" for="email">E-mail</label>
+                    <input id="email" type="email" required/>   
+                </div>
+                <div class="form_div">
+                    <label class="signup_form_label" for="password">Password</label>
+                    <input id="password" type="password" title="Must meet the requirements" required />
+                </div>
+                <div class="center-signup">
+                  <input type="submit" value="Signup">
+                </div>
+            </form>
+          </div>
+          <div id="passwordRequirements" style="color: red; display: none;"></div>
       </div>
     </div>
   </template>
   
   <script>
+export default {
+  name: 'SignupComponent',
+  data() {
+    return {
+      email: '',
+      password: '',
+    };
+  },
+  methods: {
+    signup() {
+      const passwordRequirements = document.getElementById('passwordRequirements');
 
+      const lengthCondition = this.password.length >= 8 && this.password.length < 15;
+      const uppercaseCondition = /[A-Z]/.test(this.password);
+      const lowercaseCondition = /[a-z].*[a-z]/.test(this.password);
+      const numericCondition = /\d/.test(this.password);
+      const startUppercaseCondition = /^[A-Z]/.test(this.password);
+      const underscoreCondition = /_/.test(this.password);
 
-  export default {
-    name: 'SignupComponent',
-  }
+      if (lengthCondition && uppercaseCondition && lowercaseCondition && numericCondition && startUppercaseCondition && underscoreCondition) {
+        passwordRequirements.style.display = 'none';
+        alert('Signup successful!');
+      } else {
+        passwordRequirements.style.display = 'block';
+        passwordRequirements.innerHTML =
+          'Password is not valid. Please follow these conditions: ' +
+          '<ul>' +
+          '<li>At least 8 characters and less than 15 characters</li>' +
+          '<li>At least one uppercase alphabet character</li>' +
+          '<li>At least two lowercase alphabet characters</li>' +
+          '<li>At least one numeric value</li>' +
+          '<li>Should start with an uppercase alphabet</li>' +
+          '<li>Should include the character “_”</li>' +
+          '</ul>';
+      }
+    },
+  },
+  mounted() {
+    document.getElementById('signupForm').addEventListener('submit', (event) => {
+      this.signup();
+      event.preventDefault();
+    });
+  },
+};
   </script>
   
   <style scoped>
@@ -44,7 +84,6 @@
 .general-background {
     margin-top: 25px;
     margin-bottom: 25px;
-    display: flex;
     background-color: gainsboro;
     padding: 10px;
     border-radius: 25px 25px 25px 25px;
@@ -55,9 +94,6 @@
     justify-content: flex-start;
 }
 
-.height-200 {
-    height: 200px;
-}
 
 .signup_form_label {
     display: inline-block;
@@ -80,7 +116,7 @@ input[type="email"], input[type="password"], input[type="submit"]{
     width: 50%;
 }
 input[type="submit"]{
-  width: 100%;
+  width: 90%;
 }
 
 </style>
