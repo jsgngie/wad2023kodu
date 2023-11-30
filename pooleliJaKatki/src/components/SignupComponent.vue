@@ -24,22 +24,16 @@
   <script>
 export default {
   name: 'SignupComponent',
-  data() {
-    return {
-      email: '',
-      password: '',
-    };
-  },
   methods: {
     signup() {
       const passwordRequirements = document.getElementById('passwordRequirements');
-
-      const lengthCondition = this.password.length >= 8 && this.password.length < 15;
-      const uppercaseCondition = /[A-Z]/.test(this.password);
-      const lowercaseCondition = /[a-z].*[a-z]/.test(this.password);
-      const numericCondition = /\d/.test(this.password);
-      const startUppercaseCondition = /^[A-Z]/.test(this.password);
-      const underscoreCondition = /_/.test(this.password);
+      var password = document.getElementById('password').value
+      const lengthCondition = password.length >= 8 && password.length < 15;
+      const uppercaseCondition = /[A-Z]/.test(password);
+      const lowercaseCondition = /[a-z].*[a-z]/.test(password);
+      const numericCondition = /\d/.test(password);
+      const startUppercaseCondition = /^[A-Z]/.test(password);
+      const underscoreCondition = /_/.test(password);
 
       if (lengthCondition && uppercaseCondition && lowercaseCondition && numericCondition && startUppercaseCondition && underscoreCondition) {
         passwordRequirements.style.display = 'none';
