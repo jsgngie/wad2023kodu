@@ -28,9 +28,9 @@ export default {
 }
 
 body {
-  background-image: url("./assets/images/blur.jpg");
+  background-image: url("assets/images/blur.jpg");
   background-size: auto;
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   font-family: "customFont";
 }
 </style>
