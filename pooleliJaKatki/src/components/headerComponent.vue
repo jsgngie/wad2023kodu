@@ -1,8 +1,8 @@
 <template>
   <header>
-    <div id="home" class="buttons">Home</div>
+    <router-link to="/" class="buttons">Home</router-link>
     <p id="welcome">Welcome!</p>
-    <div id="signUp" class="buttons">Sign Up</div>
+    <router-link to="/signup" class="buttons">Sign Up</router-link>
   </header>
 </template>
 

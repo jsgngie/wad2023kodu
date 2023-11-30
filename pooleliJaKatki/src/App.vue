@@ -1,25 +1,27 @@
 <template>
-  <HeaderComponent/>
-  <PostsComponent/>
-  <FooterComponent/>
+  <div>
+    <HeaderComponent/>
+    <!--<PostsComponent/>-->
+    <router-view />
+    <FooterComponent/>
+  </div>
 </template>
 
 <script>
-
 import HeaderComponent from './components/headerComponent.vue';
 import FooterComponent from './components/FooterComponent.vue';
-import PostsComponent from './components/PostsComponent.vue';
+/*import PostsComponent from './components/PostsComponent.vue';*/
+
+
 
 export default {
   name: 'App',
   components: {
     HeaderComponent,
-    PostsComponent,
+    /*PostsComponent,*/
     FooterComponent
   }
 }
-
-
 </script>
 
 <style>
@@ -30,10 +32,10 @@ export default {
 
 body {
   background-image: url("./assets/images/blur.jpg");
-  background-size:auto;
+  background-size: auto;
   background-repeat: no-repeat;
   font-family: "customFont";
 }
-
 </style>
+
 
