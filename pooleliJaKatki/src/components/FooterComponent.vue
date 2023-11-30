@@ -12,7 +12,7 @@ export default {
 </script>
 
 <style scoped>
-/* Your header styles here */
+
 footer {
   display:flex;
   background-color: gainsboro;

@@ -15,7 +15,7 @@ export default {
 </script>
 
 <style scoped>
-/* Your header styles here */
+
 
 header {
   display:flex;
