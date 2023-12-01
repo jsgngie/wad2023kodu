@@ -42,6 +42,8 @@ export default {
       if (lengthCondition && uppercaseCondition && lowercaseCondition && numericCondition && startUppercaseCondition && underscoreCondition) {
         passwordRequirements.style.display = 'none';
         alert('Signup successful!');
+        // Suunamine avalehele pärast edukat registreerimist
+        this.$router.push('/');
       } else {
         passwordRequirements.style.display = 'block';
         passwordRequirements.innerHTML =
