@@ -27,14 +27,10 @@ export default {
 }
 
 body {
-  background-image: url("assets/images/blur.jpg");
-  background-size:cover;
   font-family: "customFont";
+  background-color: lavender;
 }
 
-footer {
-
-}
 </style>
 
 

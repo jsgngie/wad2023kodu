@@ -22,7 +22,7 @@ footer {
   align-items: center;
   flex-direction: row;
   border-style:groove;
-  border-color: white;
+  border-color: black;
   display: flex;
   justify-content: center;
 }

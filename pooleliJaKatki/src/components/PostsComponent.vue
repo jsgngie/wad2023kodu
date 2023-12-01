@@ -1,8 +1,8 @@
 <template>
-    <div class="posts">
-      <SinglePostComponent v-for="(post, index) in posts" :key="index" :post="post" />
+    <div class="posts" ref="postsDiv">
+      <SinglePostComponent v-for="(post, index) in posts" :key="index" :post="post" ref="singlePostComponents"/>
     </div>
-    <resetComponent/>
+    <resetComponent @click="iterate"/>
   </template>
   
   <script>
@@ -21,10 +21,20 @@
         posts: things.posts,
       };
     },
+    methods: {
+      iterate() {
+        if (this.$refs.singlePostComponents) {
+          this.$refs.singlePostComponents.forEach(component => {
+            component.zeroCounter();
+          });
+        }
+      }
+    }
   };
   </script>
   
   <style scoped>
+
   .posts {
     background-color: gainsboro;
     width: fit-content;
@@ -35,7 +45,9 @@
 
     border-radius: 25px;
     border-style: groove;
-    border-color: white;
+    border-color: black;
+
+    min-width: 250px;
   }
   </style>
   

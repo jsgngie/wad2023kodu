@@ -84,7 +84,7 @@ export default {
     align-items: center;
     flex-direction: row;
     border-style: groove;
-    border-color: white;
+    border-color: black;
     justify-content: flex-start;
 }
 
