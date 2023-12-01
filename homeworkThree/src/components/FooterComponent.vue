@@ -13,6 +13,7 @@ export default {
 
 <style scoped>
 
+
 footer {
   background-color: gainsboro;
   height: 100px;
@@ -25,6 +26,7 @@ footer {
   border-color: black;
   display: flex;
   justify-content: center;
+  margin-top: auto;
 }
 
 </style>

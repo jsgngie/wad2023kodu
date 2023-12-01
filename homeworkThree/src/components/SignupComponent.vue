@@ -1,23 +1,27 @@
 <template>
     <div>
-        <div class="center general-background">
-          <div style="display: block;">
-            <form id="signupForm" class="center">
-                <div class="form_div">
-                    <label class="signup_form_label" for="email">E-mail</label>
-                    <input id="email" type="email" required/>   
-                </div>
-                <div class="form_div">
-                    <label class="signup_form_label" for="password">Password</label>
-                    <input id="password" type="password" title="Must meet the requirements" required />
-                </div>
-                <div class="center-signup">
-                  <input type="submit" value="Signup">
-                </div>
-            </form>
-          </div>
+      <div class="signup-container">
+        <div class="signup-content">
+          <div class="center general-background">
+            <div style="display: block;">
+              <form id="signupForm" class="center">
+                  <div class="form_div">
+                      <label class="signup_form_label" for="email">E-mail</label>
+                      <input id="email" type="email" required/>   
+                  </div>
+                  <div class="form_div">
+                      <label class="signup_form_label" for="password">Password</label>
+                      <input id="password" type="password" title="Must meet the requirements" required />
+                  </div>
+                  <div class="center-signup">
+                    <input type="submit" value="Signup">
+                  </div>
+              </form>
+            </div>
           <div id="passwordRequirements" style="color: red; display: none;"></div>
       </div>
+    </div>
+     </div>
     </div>
   </template>
   
@@ -62,7 +66,18 @@ export default {
 };
   </script>
   
-  <style scoped>
+<style scoped>
+.signup-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.signup-content {
+  flex: 1; /* See tagab, et sisu venib lehe kõrgusele */
+}
+
+
 .center {
     margin: auto;
     width: 300px;
