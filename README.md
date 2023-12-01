@@ -1,3 +1,4 @@
 # wad2023kodu
 web application developement kodutööd
-approved by Evert
+
+Evert Saarnak, Joosep Suuder, Triinu Tollimägi
