@@ -1,6 +1,8 @@
 <template>
   <div>
     <HeaderComponent/>
+    <LeftSidebar/>
+    <RightSidebar/>
     <router-view />
     <FooterComponent/>
   </div>
@@ -9,14 +11,17 @@
 <script>
 import HeaderComponent from './components/HeaderComponent.vue';
 import FooterComponent from './components/FooterComponent.vue';
-
+import LeftSidebar from './components/LeftSidebar.vue';
+import RightSidebar from './components/RightSidebar.vue';
 
 export default {
   name: 'App',
   components: {
     HeaderComponent,
     FooterComponent,
-  }
+    LeftSidebar,
+    RightSidebar
+}
 }
 </script>
 
