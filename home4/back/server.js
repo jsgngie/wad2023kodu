@@ -171,4 +171,25 @@ app.delete('/api/posts/:id', async (req, res) => {
       client.release();
     }
   });
+
+  app.put('/api/posts/:id', async (req, res) => {
+    try {
+      const postId = req.params.id;
+      const { body } = req.body; // Remove the 'title' from here
+  
+      const updatedPost = await pool.query(
+        'UPDATE posttable SET body = $1 WHERE id = $2 RETURNING *',
+        [body, postId]
+      );
+  
+      if (updatedPost.rows.length === 0) {
+        return res.status(404).json({ error: 'Post not found' });
+      }
+  
+      res.json(updatedPost.rows[0]);
+    } catch (error) {
+      console.error(error.message);
+      res.status(500).send('Internal Server Error');
+    }
+  });
   

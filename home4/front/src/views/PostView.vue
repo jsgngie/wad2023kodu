@@ -1,7 +1,9 @@
 <template>
     <div class="post">
       <h3>Title: {{ postData.title }}</h3>
-      <p><b>Body:</b> {{ postData.body }}</p>
+      <p style="display: inline-block;"><b>Body:</b> {{ postData.body }}</p>
+      <input id="body" type="text" />
+      <br>
       <button @click="updatePost">Update</button>
       <button @click="deletePost">Delete</button>
     </div>
@@ -14,44 +16,46 @@
     },
     data() {
       return {
-        postData: this.post, // Assign the prop value to a data property
+        postData: this.post,
       };
     },
     methods: {
-      updatePost() {
+        updatePost() {
+            const updatedBody = document.getElementById("body").value; // Get the updated body from the input
+                
         fetch(`http://localhost:3000/api/posts/${this.postData.id}`, {
-          method: "PUT",
-          headers: {
+            method: "PUT",
+            headers: {
             "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            title: "Updated Title",
-            body: "Updated Body",
-          }),
+            },
+            body: JSON.stringify({
+                body: updatedBody, // Use the updated body value
+                }),
         })
-          .then((response) => response.json())
-          .then((data) => console.log(data))
-          .catch((error) => console.error(error));
-      },
-      deletePost() {
-  const postId = this.postData.id;
-
-  fetch(`http://localhost:3000/api/posts/${postId}`, {
-    method: "DELETE",
-  })
-    .then((response) => {
-      if (response.ok) {
-        console.log(`Post with ID ${postId} deleted successfully.`);
-        // Optionally, redirect to the home view or perform other actions
-        this.$router.push("/"); // Redirect to the home view
-      } else {
-        console.error(`Failed to delete post with ID ${postId}.`);
-      }
-    })
-    .catch((error) => {
-      console.error("Error deleting post:", error);
-    });
-},
+        .then((response) => response.json())
+        .then((data) => {
+        console.log(data);
+        // Assuming the server sends back the updated post data, you can update the local postData
+        this.postData = data;
+        }).catch((error) => console.error(error));
+        },
+        deletePost() {
+            const postId = this.postData.id;
+            fetch(`http://localhost:3000/api/posts/${postId}`, {
+                method: "DELETE",
+            })
+        .then((response) => {
+        if (response.ok) {
+            console.log(`Post with ID ${postId} deleted successfully.`);
+            this.$router.push("/");
+        } else {
+            console.error(`Failed to delete post with ID ${postId}.`);
+        }
+        })
+        .catch((error) => {
+        console.error("Error deleting post:", error);
+        });
+    },
 
     },
     created() {
