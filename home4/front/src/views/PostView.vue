@@ -21,7 +21,7 @@
     },
     methods: {
         updatePost() {
-            const updatedBody = document.getElementById("body").value; // Get the updated body from the input
+            const updatedBody = document.getElementById("body").value;
                 
         fetch(`http://localhost:3000/api/posts/${this.postData.id}`, {
             method: "PUT",
@@ -29,13 +29,12 @@
             "Content-Type": "application/json",
             },
             body: JSON.stringify({
-                body: updatedBody, // Use the updated body value
+                body: updatedBody,
                 }),
         })
         .then((response) => response.json())
         .then((data) => {
         console.log(data);
-        // Assuming the server sends back the updated post data, you can update the local postData
         this.postData = data;
         }).catch((error) => console.error(error));
         },
@@ -65,12 +64,11 @@
         method: "GET",
         headers: {
           "Content-Type": "application/json",
-          // You might need to include any authentication headers if required
         },
       })
         .then((response) => response.json())
         .then((data) => {
-          this.postData = data; // Set the fetched post data to the component's data
+          this.postData = data;
         })
         .catch((error) => {
           console.error("Error fetching post:", error);
@@ -80,6 +78,6 @@
   </script>
   
   <style scoped>
-    /* Your styles here */
+  
   </style>
   

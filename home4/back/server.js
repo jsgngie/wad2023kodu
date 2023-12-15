@@ -175,7 +175,7 @@ app.delete('/api/posts/:id', async (req, res) => {
   app.put('/api/posts/:id', async (req, res) => {
     try {
       const postId = req.params.id;
-      const { body } = req.body; // Remove the 'title' from here
+      const { body } = req.body;
   
       const updatedPost = await pool.query(
         'UPDATE posttable SET body = $1 WHERE id = $2 RETURNING *',

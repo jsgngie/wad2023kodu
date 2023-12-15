@@ -10,7 +10,7 @@
   :key="post.id"
 >
   <div class="post">
-    <h3>Title: {{ post.title }}</h3>
+    <h3>Kuupäev: {{ post.title }}</h3>
     <p><b>Body:</b> {{ post.body }}</p>
   </div>
 </router-link>
