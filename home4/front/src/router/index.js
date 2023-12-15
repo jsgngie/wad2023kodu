@@ -3,6 +3,7 @@ import HomeView from "../views/HomeView.vue";
 import SignUp from "../views/SignUp.vue";
 import LogIn from "../views/LogIn.vue";
 import auth from "../auth";
+import PostView from "../views/PostView.vue"
 
 
 
@@ -39,6 +40,11 @@ const routes = [{
         component: () =>
             import ( /* webpackChunkName: "about" */ "../views/ContactsView.vue"),
     },
+    {
+        path: '/post/:id',
+        name: 'PostView',
+        component: PostView,
+      },
 ];
 
 const router = createRouter({

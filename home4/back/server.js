@@ -125,3 +125,50 @@ app.get('/auth/logout', (req, res) => {
     console.log('delete jwt request arrived');
     res.status(202).clearCookie('jwt').json({ "Msg": "cookie cleared" }).send
 });
+
+
+app.get('/api/posts', async (req, res) => {
+    try {
+        const posts = await pool.query("SELECT * FROM posttable");
+        res.json(posts.rows);
+    } catch (error) {
+        console.error(error.message);
+        res.status(500).send("Internal Server Error");
+    }
+});
+
+app.get('/api/posts/:id', async (req, res) => {
+    try {
+        const { id } = req.params;
+        const post = await pool.query("SELECT * FROM posttable WHERE id = $1", [id]);
+
+        if (post.rows.length === 0) {
+            return res.status(404).json({ error: "Post not found" });
+        }
+
+        res.json(post.rows[0]);
+    } catch (error) {
+        console.error(error.message);
+        res.status(500).send("Internal Server Error");
+    }
+});
+
+app.delete('/api/posts/:id', async (req, res) => {
+    const client = await pool.connect();
+  
+    try {
+      const { id } = req.params;
+      console.log(`Deleting post with ID: ${id}`);
+      await client.query('DELETE FROM posttable WHERE id = $1', [id]);
+      await client.query('COMMIT');
+  
+      res.json({ message: `Post with ID ${id} deleted successfully` });
+    } catch (error) {
+      await client.query('ROLLBACK');
+      console.error(error.message);
+      res.status(500).send("Internal Server Error");
+    } finally {
+      client.release();
+    }
+  });
+  

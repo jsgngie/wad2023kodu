@@ -3,11 +3,18 @@
     <div class="container">
     <button v-if = "authResult" @click="Logout" class="center">Logout</button>
     </div>
-    <div class="post-list" v-for="post in posts"   :key="post.index">  
-      <div class="post">
-          <h3>  Title:  {{post.title}} </h3>
-          <p>  <b> Body: </b> {{post.body}} </p>
-      </div>
+    <div class="post-list">
+      <router-link
+  v-for="post in posts"
+  :to="{ name: 'PostView', params: { id: post.id } }"
+  :key="post.id"
+>
+  <div class="post">
+    <h3>Title: {{ post.title }}</h3>
+    <p><b>Body:</b> {{ post.body }}</p>
+  </div>
+</router-link>
+
     </div>
   </div>
 </template>
@@ -15,10 +22,12 @@
 <script>
 // @ is an alias to /src
 import auth from "../auth";
+import PostView from "./PostView.vue"
 
 export default {
   name: "HomeView",
   components: {
+    PostView
   },
    data: function() {
     return {
@@ -45,12 +54,23 @@ export default {
       });
     },
   }, 
+
+
   mounted() {
-        fetch('https://jsonplaceholder.typicode.com/posts')
-        .then((response) => response.json())
-        .then(data => this.posts = data)
-        .catch(err => console.log(err.message))
-    }
+  fetch('http://localhost:3000/api/posts', {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      this.posts = data;
+    })
+    .catch((error) => {
+      console.error("Error fetching data:", error);
+    });
+}
 };
 </script>
 
