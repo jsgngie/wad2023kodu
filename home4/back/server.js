@@ -170,16 +170,16 @@ app.delete('/api/posts/:id', async (req, res) => {
     } finally {
       client.release();
     }
-  });
+});
 
-  app.put('/api/posts/:id', async (req, res) => {
+app.put('/api/posts/:id', async (req, res) => {
     try {
       const postId = req.params.id;
-      const { body } = req.body;
+      const { body, title } = req.body;
   
       const updatedPost = await pool.query(
-        'UPDATE posttable SET body = $1 WHERE id = $2 RETURNING *',
-        [body, postId]
+        'UPDATE posttable SET title = $1, body = $2 WHERE id = $3 RETURNING *',
+        [title, body, postId]
       );
   
       if (updatedPost.rows.length === 0) {
@@ -191,5 +191,41 @@ app.delete('/api/posts/:id', async (req, res) => {
       console.error(error.message);
       res.status(500).send('Internal Server Error');
     }
-  });
+});
+  
+  
+app.post('/api/posts', async (req, res) => {
+    try {
+      const { title, body } = req.body;
+  
+      const newPost = await pool.query(
+        'INSERT INTO posttable (title, body) VALUES ($1, $2) RETURNING *',
+        [title, body]
+      );
+  
+      res.status(201).json(newPost.rows[0]);
+    } catch (error) {
+      console.error(error.message);
+      res.status(500).send('Internal Server Error');
+    }
+});
+
+app.delete("/api/deleteall", async (req, res) => {
+    const client = await pool.connect();
+  
+    try {
+      await client.query("BEGIN");
+      await client.query("DELETE FROM posttable");
+      await client.query("COMMIT");
+  
+      res.json({ message: "All posts deleted successfully." });
+    } catch (error) {
+      console.error("Error deleting all posts:", error);
+      await client.query("ROLLBACK");
+      res.status(500).json({ error: "Internal Server Error", details: error.message });
+    } finally {
+      client.release();
+    }
+});
+  
   

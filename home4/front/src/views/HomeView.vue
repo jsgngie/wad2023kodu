@@ -13,8 +13,10 @@
     <h3>Kuupäev: {{ post.title }}</h3>
     <p><b>Body:</b> {{ post.body }}</p>
   </div>
+  
 </router-link>
-
+<router-link to="/add-post" class="center">Add Post</router-link>
+<button @click="deleteAll">Delete All Posts</button>
     </div>
   </div>
 </template>
@@ -52,6 +54,19 @@ export default {
         console.log(e);
         console.log("error logout");
       });
+    },
+    deleteAll() {
+      fetch(`http://localhost:3000/api/deleteall`, {
+          method: "DELETE",
+        })
+        .then((response) => {
+          if (response.ok) {
+            console.log("All posts deleted successfully.");
+          } else {
+            console.error("Failed to delete all posts. Status:", response.status);
+          }
+      })
+    .catch((error) => console.error("Error deleting all posts:", error));
     },
   }, 
 
