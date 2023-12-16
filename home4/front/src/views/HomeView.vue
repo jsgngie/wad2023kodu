@@ -15,7 +15,7 @@
   </div>
   
 </router-link>
-<router-link to="/add-post" class="center">Add Post</router-link>
+<button><router-link to="/add-post" class="center">Add Post</router-link></button>
 <button @click="deleteAll">Delete All Posts</button>
     </div>
   </div>
