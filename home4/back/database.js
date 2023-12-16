@@ -37,4 +37,23 @@ execute(createTblQuery).then(result => {
     }
 });
 
+
+const createPosttableQuery = `
+    CREATE TABLE IF NOT EXISTS "posttable" (
+        id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+        title character varying(200) COLLATE pg_catalog."default" NOT NULL,
+        body character varying(200) COLLATE pg_catalog."default" NOT NULL,
+        urllink character varying(200) COLLATE pg_catalog."default"
+    )
+    TABLESPACE pg_default;
+
+    ALTER TABLE IF EXISTS public.posttable OWNER to postgres;`;
+
+execute(createPosttableQuery).then(result => {
+    if (result) {
+        console.log('Table "posttable" is created');
+    }
+});
+    
+
 module.exports = pool;
