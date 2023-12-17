@@ -5,28 +5,79 @@
 <!--     <router-link to="/login">LogIn</router-link> | -->
     <router-link to="/contacts">Contacts</router-link>
   </nav>
-  <router-view />
+  <div class="mainContainer">
+    <sideBar />
+    <router-view />
+    <sideBar />
+  </div>
+  <FooterComponent class="footer"/>
 </template>
 
+
+<script>
+import FooterComponent from './views/FooterComponent.vue';
+import sideBar from './views/sideBar.vue';
+
+export default {
+  name: 'App',
+  components: {
+    FooterComponent,
+    sideBar
+}
+}
+
+
+</script>
+
 <style>
+
+@font-face {
+  font-family: "customFont";
+  src: url(./assets/fonts/Jost-Regular.woff);
+}
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: "customFont";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #000000;
+  text-decoration: none;
+}
+
+body {
+  background-color: #003049;
 }
 
 nav {
   padding: 30px;
+  font-size: 30px;
+  color: #fdf0d5;
 }
 
 nav a {
-  font-weight: bold;
-  color: #2c3e50;
+  font-weight: bolder;
+  color: #fdf0d5;
+  text-decoration: none;
 }
 
-nav a.router-link-exact-active {
-  color: #42b983;
+nav a:hover {
+  opacity: 50%;
+  
 }
+
+.footer {
+  margin-bottom: auto;
+}
+
+.mainContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+
 </style>

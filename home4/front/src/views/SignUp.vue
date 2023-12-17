@@ -1,11 +1,11 @@
 <template>
   <div class="form">
-    <h3>SignUp</h3>
+    <h2>SignUp</h2>
     <label for="email">Email</label>
     <input type="email" name="email"  required v-model="email">
     <label for="password">Password</label>
     <input type="password" name="password" required v-model="password">
-    <button @click="SignUp" class="SignUp">SignUp</button>
+    <button @click="SignUp" class="SignUp">Sign up</button>
   </div>
 </template>
 
@@ -52,44 +52,45 @@ SignUp() {
 </script>
 
 <style scoped>
-.form {
-  max-width: 420px;
-  margin: 30px auto;
-  background: rgb(167, 154, 154);
-  text-align: left;
-  padding: 40px;
-  border-radius: 10px;
+
+h2 {
+  font-size: 40px;
+  margin-top:10px;
 }
-h3 {
-  text-align: center;
-  color: rgb(8, 110, 110);
-}
-label {
-  color: rgb(8, 110, 110);
-  display: inline-block;
-  margin: 25px 0 15px;
-  font-size: 0.8em;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-weight: bold;
-}
-input {
-  display: block;
-  padding: 10px 6px;
-  width: 100%;
-  box-sizing: border-box;
-  border: none;
-  border-bottom: 1px solid white;
-  color: blue;
-}
+
 button {
-  background: rgb(8, 110, 110);
-  border: 0;
-  padding: 10px 20px;
-  margin-top: 20px;
-  color: white;
-  border-radius: 20px;
-  align-items: center;
-  text-align: center;
+  padding:20px;
+  width: 100px;
+  border-radius:5px;
+  background-color: #669bbc;
+  border-style:none;
+  margin:auto auto 10px;
+  font-weight:bold;
 }
+
+button:hover {
+  cursor:pointer;
+  opacity: 70%;
+  background-color: #780000;
+  color: #fdf0d5;
+}
+
+.form {
+  margin: auto auto;
+  display: flex;
+  flex-direction:column;
+  width:300px;
+  padding:15px;
+  border-radius: 5px;
+  background-color: #fdf0d5;
+}
+
+.form input {
+  width: 200px;
+  margin: auto auto 20px;
+  margin-top: 5px;
+  padding:5px;
+  border-style:inset;
+}
+
 </style>

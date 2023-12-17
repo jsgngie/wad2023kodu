@@ -1,9 +1,9 @@
 <template>
   <div class="contacts">
     <h1>Kontaktid</h1>
-    <p>Nimi: Evert email: evert@web.ee</p>
-    <p>Nimi: Joosep email: joosep@web.ee</p>
-    <p>Nimi: Triinu email: triinu@web.ee</p>
+    <p><b>Evert</b><br>evert@web.ee</p>
+    <p><b>Joosep</b><br>joosep@web.ee</p>
+    <p><b>Triinu</b><br>triinu@web.ee</p>
   </div>
 </template>
 
@@ -11,88 +11,33 @@
 export default {
   name: "ContactsView",
 }
+
 </script>
 
-<style scoped>
-  body{
-  margin: 20px 40px;
-  font-size: 1.2rem;
-  letter-spacing: 1px;
-  background: #fafafa;
-  position: relative;
+<style>
+
+h1 {
+  color: #003049;
 }
-.post-list{
-  background: rgb(189, 212, 199);
-  margin-bottom: 5px;
-  padding: 3px 5px;
+
+.contacts {
+  margin: auto auto;
+  display: flex;
+  flex-direction:column;
+  width:300px;
+  padding:15px;
+  border-radius: 5px;
+  background-color: #fdf0d5;
+}
+
+.contacts p {
+  margin-left: auto;
+  margin-right:auto;
+  padding:16px;
+  background-color: #780000;
+  color: white;
   border-radius: 10px;
+  width: 150px;
 }
-h3{
-    margin: 0;
-  padding: 0;
-  font-family: 'Quicksand', sans-serif;
-  color: #444;
-  background: #7e9756;
-}
-p{
-  background: #796dbd;
-}
-h1, h2, h3, h4, ul, li, a, input, label, button, div, footer{
-  margin: 0;
-  padding: 0;
-  font-family: 'Quicksand', sans-serif;
-  color: #444;
-}
-nav{
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  margin-bottom: 80px;
-}
-input{
-  padding: 10px 12px;
-  border-radius: 4px;
-  border: 1px solid #ddd;
-  font-size: 1em;
-  width: 100%;
-}
-label{
-  display: block;
-  margin: 20px 0 10px;
-}
-button{
-  margin-top: 30px;
-  border-radius: 36px;
-  background: #FEE996;
-  border:0;
-  font-weight: 700;
-  font-size: 0.8em;
-  display: block;
-  padding: 10px 16px;
-  letter-spacing: 2px;
-}
-nav{
-  display: flex;
-  align-items: center;
-}
-.post {
-    width: 80%;
-    position: relative;
-    padding: 10px;
-    margin: 10px auto;
-    border: 1px solid gray;
-    text-align: left;
-}
-.center {
-  margin: auto;
-  border: 0;
-  padding: 10px 20px;
-  margin-top: 20px;
-  margin: 10px auto;
-  width: 30%; 
-}
-.container {
-  display: flex;
-  justify-content: center;
-}
+
 </style>
